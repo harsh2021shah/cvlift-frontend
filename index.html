@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVLift.me — AI Resume & Cover Letter Generator</title>
+  <meta name="description" content="Stop sending resumes that get ghosted. CVLift uses AI to tailor your resume to any job description in seconds. ATS-optimized, 10+ templates.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">⚡</span> CVLift
+      </a>
+      
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+      </div>
+
+      <div class="nav-actions">
+        <a href="help.html" class="nav-help">Help</a>
+        <a href="https://app.cvlift.me/auth" class="btn-outline">Login / Register</a>
+      </div>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu">
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="help.html">Help Center</a>
+    <a href="https://app.cvlift.me/auth" class="btn-primary" style="justify-content: center; width: 100%;">Get Started Free</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-bg">
+      <div class="orb-1"></div>
+      <div class="orb-2"></div>
+      <div class="dot-grid"></div>
+    </div>
+    
+    <div class="container hero-content">
+      <!-- Left Column -->
+      <div class="hero-left">
+        <div class="hero-badge" data-hero-animate>✦ AI-Powered Resume Generator</div>
+        <h1 data-hero-animate>
+          Stop Sending Resumes<br>
+          <span class="text-gradient">That Get Ghosted.</span>
+        </h1>
+        <p class="hero-subtitle" data-hero-animate>
+          Paste any job link. AI reads the role. You get a perfectly tailored,
+          ATS-optimized resume and cover letter — in under 60 seconds.
+        </p>
+        
+        <div class="hero-cta" data-hero-animate>
+          <a href="https://app.cvlift.me/auth" class="btn-primary btn-lg btn-pulse">
+            Get Started Free <span class="btn-arrow">→</span>
+          </a>
+          <p class="cta-note">10 free resume generations · No credit card required</p>
+        </div>
+
+        <div class="social-proof" data-hero-animate>
+          <div class="stars">★★★★★</div>
+          <span>Join 1,000+ job seekers landing their dream jobs</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Mockup -->
+      <div class="resume-mockup-wrapper" data-hero-animate>
+        <div class="resume-mockup">
+          <div class="mockup-header">
+            <div class="mockup-avatar"></div>
+            <div class="mockup-name-block">
+              <div class="fake-line wide dark"></div>
+              <div class="fake-line medium"></div>
+            </div>
+          </div>
+          <div class="mockup-section-label">EXPERIENCE</div>
+          <div class="fake-line wide"></div>
+          <div class="fake-line medium"></div>
+          <div class="fake-line narrow"></div>
+          <div class="mockup-section-label">SKILLS</div>
+          <div class="mockup-tags">
+            <span class="tag">Python</span>
+            <span class="tag">React</span>
+            <span class="tag">SQL</span>
+          </div>
+          <div class="mockup-ats-badge">
+            <span class="ats-dot"></span> ATS SCORE: 97%
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">HOW IT WORKS</span>
+        <h2>From Job Link to Interview in 3 Steps</h2>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Connector Line (Desktop Only) -->
+        <div class="steps-connector"></div>
+
+        <!-- Step 1 -->
+        <div class="step-card" data-animate data-delay="0">
+          <div class="step-number">01</div>
+          <div class="step-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </div>
+          <h3>Paste Job Link</h3>
+          <p>Drop any job posting URL from LinkedIn, Indeed, or any site. We extract everything automatically.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card" data-animate data-delay="100">
+          <div class="step-number">02</div>
+          <div class="step-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+          </div>
+          <h3>Choose Your Style</h3>
+          <p>Select your AI customization level: High (freshers), Medium (balanced), or Low (experienced).</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card" data-animate data-delay="200">
+          <div class="step-number">03</div>
+          <div class="step-icon-wrapper">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+          </div>
+          <h3>Download & Apply</h3>
+          <p>Get your ATS-optimized resume and cover letter. PDF, DOCX, or TXT. Apply with confidence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">WHY CVLIFT</span>
+        <h2>Everything You Need to Land the Interview</h2>
+        <p>Powered by AI, designed for success.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card" data-animate>
+          <div class="feature-icon">✨</div>
+          <h3>Job-Perfect AI Matching</h3>
+          <p>Paste a job link and our AI matches your resume to the exact keywords, tone, and skills the recruiter is scanning for. Every single time.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card" data-animate data-delay="100">
+          <div class="feature-icon">🎚️</div>
+          <h3>Smart Customization Levels</h3>
+          <p>Fresh grad or seasoned pro? High AI rewrites aggressively. Low keeps your voice. You choose how much the AI touches your content.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card" data-animate data-delay="200">
+          <div class="feature-icon">🛡️</div>
+          <h3>ATS-Optimized Templates</h3>
+          <p>10 professionally designed templates built to clear Applicant Tracking Systems. No fancy tables or graphics that confuse the bots.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card" data-animate data-delay="300">
+          <div class="feature-icon">📥</div>
+          <h3>Export Anywhere</h3>
+          <p>PDF. DOCX. TXT. Download in any format, compatible with every job board and application system on the planet.</p>
+        </div>
+      </div>
+
+      <div class="feature-pills" data-animate>
+        <div class="feature-pill">⚡ 60-Second Generation</div>
+        <div class="feature-pill">🎯 Keyword Optimization</div>
+        <div class="feature-pill">✉ Cover Letter Included</div>
+        <div class="feature-pill">🔒 Your Data Stays Private</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">PRICING</span>
+        <h2>Simple Pricing. No Surprises.</h2>
+        <p>Start free with 10 credits. Upgrade when you're ready.</p>
+      </div>
+
+      <div class="pricing-toggle">
+        <span class="toggle-label" id="label-monthly">Monthly</span>
+        <button class="toggle-switch" id="billingToggle" aria-label="Toggle billing period">
+          <span class="toggle-thumb"></span>
+        </button>
+        <span class="toggle-label" id="label-yearly">
+          Yearly <span class="save-badge">Save 20%</span>
+        </span>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Free Trial -->
+        <div class="pricing-card" data-animate>
+          <div class="plan-name">Free Trial</div>
+          <div class="plan-price">$0</div>
+          <div class="plan-period">Forever free</div>
+          <div class="plan-desc">Try CVLift with no commitment.</div>
+          <a href="https://app.cvlift.me/auth" class="btn-outline" style="justify-content: center;">Start Free</a>
+          <ul class="plan-features">
+            <li>10 Credits to start</li>
+            <li>All 10 templates</li>
+            <li>ATS Optimization</li>
+            <li>PDF, DOCX, TXT Export</li>
+          </ul>
+        </div>
+
+        <!-- Basic -->
+        <div class="pricing-card" data-animate data-delay="100">
+          <div class="plan-name">Basic</div>
+          <div class="plan-price">
+            <span class="price-monthly">$9</span>
+            <span class="price-yearly">$7.20</span>
+          </div>
+          <div class="plan-period">per month</div>
+          <div class="plan-desc">For moderate job seekers.</div>
+          <a href="https://app.cvlift.me/auth" class="btn-primary" style="justify-content: center;">Get Started</a>
+          <ul class="plan-features">
+            <li>150 Credits / month</li>
+            <li>Everything in Free</li>
+            <li>Email Support</li>
+            <li class="price-yearly">Save 20% on yearly</li>
+          </ul>
+        </div>
+
+        <!-- Premium -->
+        <div class="pricing-card popular" data-animate data-delay="200">
+          <div class="popular-badge">Most Popular</div>
+          <div class="plan-name">Premium ⭐</div>
+          <div class="plan-price">
+            <span class="price-monthly">$24</span>
+            <span class="price-yearly">$19.20</span>
+          </div>
+          <div class="plan-period">per month</div>
+          <div class="plan-desc">For power users applying daily.</div>
+          <a href="https://app.cvlift.me/auth" class="btn-primary" style="justify-content: center;">Get Started</a>
+          <ul class="plan-features">
+            <li>500 Credits / month</li>
+            <li>Priority Support</li>
+            <li>Save 58% vs Pay As You Go</li>
+            <li class="price-yearly">Save 20% on yearly</li>
+          </ul>
+        </div>
+
+        <!-- Pay As You Go -->
+        <div class="pricing-card" data-animate data-delay="300">
+          <div class="plan-name">Pay As You Go</div>
+          <div class="plan-price">$1</div>
+          <div class="plan-period">per credit pack</div>
+          <div class="plan-desc">Flexible option. No subscription.</div>
+          <a href="https://app.cvlift.me/dashboard/plan" class="btn-outline" style="justify-content: center;">Buy Credits</a>
+          <ul class="plan-features">
+            <li>20 credits per $1 (min $3)</li>
+            <li>Credits never expire</li>
+            <li>No monthly commitment</li>
+            <li>All Pro features included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">TESTIMONIALS</span>
+        <h2>Loved By Job Seekers</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card" data-animate>
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="quote-text">I honestly didn't expect an AI tool to write better than me. I filled in my info and it looked instantly professional.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">GM</div>
+            <div>
+              <div class="author-name">Georgette M.</div>
+              <div class="author-title">Social Media Manager</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card" data-animate data-delay="100">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="quote-text">Finally, a CV tool that doesn't feel like homework. The AI suggestions actually made sense, and the templates are way better than anything I could have made in Word.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">HY</div>
+            <div>
+              <div class="author-name">Hiroshi Y.</div>
+              <div class="author-title">Graduate Project Manager</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card" data-animate data-delay="200">
+          <div class="quote-mark">"</div>
+          <div class="stars">★★★★★</div>
+          <p class="quote-text">I tried three other CV builders before this. They all looked generic or outdated. CVLift's templates actually made my experience look impressive, not just listed.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">OH</div>
+            <div>
+              <div class="author-name">Omar H.</div>
+              <div class="author-title">Sales Manager</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container faq-container">
+      <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know before you start.</p>
+      </div>
+
+      <div class="faq-list">
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            How does CVLift work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Paste any job posting URL. Our AI reads the job description, extracts the key requirements, and generates a tailored resume and cover letter that matches what the recruiter is looking for — in under 60 seconds.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What is the 3-level customization?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            High customization is ideal for freshers — AI rewrites and fills in content aggressively. Medium balances AI input with your experience. Low is best for senior professionals who want light polishing without changing their voice.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Which job platforms does CVLift support?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Any job posting with a URL — LinkedIn, Indeed, Glassdoor, Wellfound, company career pages, and more. If you can link to it, we can read it.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What is ATS optimization?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Applicant Tracking Systems (ATS) filter resumes before a human even sees them. CVLift ensures your resume uses the right keywords and clean formatting to pass these filters automatically.
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I edit the generated resume?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. After generation you can edit all content in the app, switch templates, and re-download as many times as you need within your credit allowance.
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What formats can I download?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            PDF, DOCX (Word), and TXT — all perfectly formatted and compatible with every major job portal.
+          </div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            How many templates are available?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            10 professionally designed, ATS-friendly templates included in all plans at no extra cost.
+          </div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I cancel my subscription anytime?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes, cancel anytime from your dashboard. No lock-ins, no questions asked.
+          </div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens after I use my free credits?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            You can upgrade to a monthly plan (starting at $9/mo) or buy credit packs on a pay-as-you-go basis starting at $3.
+          </div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my data secure?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            Yes. We use industry-standard encryption and never sell your data. Your resume information is used only to generate your documents.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final-cta">
+    <div class="hero-bg" style="opacity: 0.5;">
+      <div class="orb-1" style="width: 400px; height: 400px; top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+    </div>
+    <div class="container final-cta-content" data-animate>
+      <h1>Ready to Land Your Dream Job?</h1>
+      <p class="hero-subtitle" style="margin: 0 auto 40px;">Join thousands of job seekers using AI to stand out from the crowd.</p>
+      
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+        <a href="https://app.cvlift.me/auth" class="btn-primary btn-lg btn-pulse">
+          Get Started Free <span class="btn-arrow">→</span>
+        </a>
+        <p class="cta-note">10 free resume generations · No credit card required</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-col">
+          <a href="#" class="logo" style="margin-bottom: 16px;">⚡ CVLift</a>
+          <p style="font-size: 14px;">AI-powered resumes and cover letters that get you hired.</p>
+          <div class="social-links">
+            <a href="https://twitter.com/cvlift" target="_blank" rel="noopener" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865l8.875 11.633Z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com/company/cvlift" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div class="footer-col">
+          <h4>Product</h4>
+          <div class="footer-links">
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+            <a href="help.html">Help Center</a>
+          </div>
+        </div>
+
+        <!-- Legal -->
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <div class="footer-links">
+            <a href="/terms">Terms & Conditions</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/refunds">Cancellation & Refunds</a>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="footer-col">
+          <h4>Support</h4>
+          <div class="footer-links">
+            <a href="mailto:support@cvlift.me">support@cvlift.me</a>
+            <a href="help.html">Help Center</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CVLift. All rights reserved.</div>
+        <div>Built with ♥ for job seekers</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
