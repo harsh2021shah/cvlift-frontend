@@ -1,0 +1,53 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+@use "../abstracts" as *;
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+// .container {
+//   max-width: $page-width; /* 1 */
+//   margin-left: auto; /* 2 */
+//   margin-right: auto; /* 2 */
+//   padding-left: 20px; /* 3 */
+//   padding-right: 20px; /* 3 */
+//   width: 100%; /* 1 */
+// }
+
+// progress-bar
+
+.progress {
+	display: flex;
+	gap: 2rem;
+	align-items: flex-end;
+	height: 40px;
+
+	.bar {
+		transform-origin: bottom;
+		transform: scaleY(1);
+		width: 1px;
+		height: 35%;
+		background-color: $bg-animation;
+		&:nth-child(1):not(.hero__progress-bar){
+		transform: scaleY(2.8);
+		}
+	}
+}
+
+// add margin to pen spacer wrapper if Gsap add one
+body > .pen-spacer {
+	margin-block-end: $margin-section;
+}
+
+
+
+.section-head{
+    	width: fit-content ;
+		margin: 0 auto rfs(10rem) ;
+		text-align: center;
+}

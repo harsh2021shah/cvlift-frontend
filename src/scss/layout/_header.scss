@@ -1,0 +1,116 @@
+@use "../abstracts" as *;
+
+.wrapper.header {
+	position: sticky;
+	z-index: 100;
+	top: 0;
+	background-color: $bg-primary;
+	transition: transform $main-transition-delay cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo {
+	width: 154px;
+	height: 32px;
+	background: svg-load("../assets/logo/logo.svg", fill=$text-primary-100) center no-repeat;
+	transition: background $main-transition-delay, fill $main-transition-delay;
+}
+
+.logo:hover {
+	background: svg-load("../assets/logo/logo.svg", fill=$bg-links) center no-repeat;
+}
+
+header {
+	@include loadify(1s);
+	@include adaptive(2px);
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 6rem;
+	padding-block: 2rem;
+	padding-inline: 0.75rem;
+	background-color: $bg-primary;
+
+	nav {
+		display: flex;
+		gap: rfs(2.5rem);
+		align-items: center;
+	}
+
+	// mobile/tablet devices
+	@media (width <= $mq-xmd) {
+		// change header container size
+		max-width: 100%;
+		margin: 0;
+		padding: rfs(2rem);
+
+		// make the header displayed even when showing mobile navigation menu
+		.logo,
+		.burger-menu {
+			z-index: 100;
+		}
+
+		// burger menu icon
+		.burger-menu {
+			display: flex;
+
+			&__bars {
+				// create menu bars (three bars)
+				@include burger(20px, 2px, 3px, $text-primary-100, 1rem);
+
+				// exclude middle bar (two bars only)
+				@include burger-middle {
+					height: 0;
+				}
+			}
+
+			// burger bar animation when clicked
+			&.active .burger-menu__bars {
+				@include burger-to-cross($bg-links);
+			}
+
+			// show mobile navigation menu when burger menu is clicked
+			&.active ~ nav {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		/* Style for the mobile navigation container */
+		nav {
+			position: fixed;
+			z-index: 99;
+			inset: 0 0% 0%;
+			flex-direction: column;
+			gap: 0;
+			justify-content: flex-end;
+			height: 100vh;
+			height: 100svh;
+			padding: 1rem;
+			visibility: hidden;
+			opacity: 0;
+			background-color: $bg-primary;
+			transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+		}
+
+		nav a {
+			width: 100%;
+			padding-block: 1.5rem;
+			padding-inline-end: rfs(1.5rem);
+			font-size: $text-2xl;
+		}
+
+		nav > a {
+			border-bottom: 1px solid rgb($text-secondary-100, 0.3);
+		}
+
+		nav .contact {
+			display: flex;
+			gap: 1rem;
+
+			a {
+				fill: $text-primary-100;
+			}
+		}
+	}
+}
