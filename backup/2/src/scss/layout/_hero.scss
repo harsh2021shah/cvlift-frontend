@@ -1,0 +1,371 @@
+@use "../abstracts" as *;
+
+.hero {
+	@include loadify(1s);
+	@include adaptive(2px);
+
+	position: relative;
+	height: 100vh;
+	height: 100svh;
+	margin-block-end: $margin-section;
+	background: svg-load("../assets/svg/camera-frames.svg", fill=$bg-animation), svg-load("../assets/svg/camera-frames.svg", fill=$bg-animation);
+	background-repeat: no-repeat;
+	background-position: 33% top, 80% 0;
+	background-size: contain, cover;
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+		align-items: center;
+		padding-top: rfs(8rem);
+		padding-bottom: 3.875rem;
+		text-align: center;
+
+		&-title h1 {
+			@include only(1) {
+				@include loadify(0.4s);
+			}
+
+			@include only(2) {
+				@include loadify(0.6s);
+			}
+		}
+
+		p {
+			$text-size: 1.6;
+
+			max-width: 46rem;
+			font-size: rfs($text-size * 1rem);
+			line-height: $text-size;
+			text-wrap: balance;
+		}
+	}
+
+	&__mockup-container {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 27rem;
+		height: 53rem;
+		border-radius: $rounded;
+
+		video {
+			position: absolute;
+			top: 5.5rem;
+			left: 3px;
+			width: 98%;
+
+			// height: 14rem;
+			height: 26%;
+			object-fit: cover;
+		}
+	}
+
+	&__mockup {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__mockup-img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		border-radius: 6rem;
+	}
+
+	&__video-desc {
+		$gaps: rfs(1.7rem);
+
+		position: relative;
+		z-index: 4;
+		padding-inline: 3rem;
+
+		&-tag {
+			margin-block: $gaps;
+			margin-inline: 27px;
+		}
+
+		&-title {
+			margin-bottom: $gaps;
+		}
+
+		.hero__video-desc-paragraph {
+			max-width: 28rem;
+		}
+	}
+
+	//* Some cool animations
+	// add gradiant-blur effect in the background
+	&__gradiant-blur-img.left {
+		position: absolute;
+		z-index: -1;
+		top: 30%;
+		left: 50%;
+		translate: -50%;
+		max-width: 98vw;
+
+		@media (width<= $mq-2xl) {
+			max-width: 100%;
+		}
+
+		@media (width<= $mq-lg) {
+			top: 34%;
+		}
+	}
+
+	&__gradiant-blur-img.right {
+		display: none;
+	}
+
+	// add faded lines with scroll down text
+	&__lines {
+		position: absolute;
+		z-index: -1;
+		top: 37%;
+	}
+
+	// add progressbar animations
+	&__progress {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		translate: -50%;
+		rotate: 180deg;
+		gap: 1rem;
+	}
+
+	/* Staggered animation delays for each progress bar */
+	&__progress-bar {
+		&:nth-child(5) {
+			animation: dancingOne 1s infinite alternate;
+		}
+
+		&:nth-child(4) {
+			animation: dancingTwo 1.5s infinite alternate;
+		}
+
+		&:nth-child(3) {
+			animation: dancingThree 1s infinite alternate;
+			animation-delay: 1s;
+		}
+
+		&:nth-child(2) {
+			animation: dancingFour 0.6s infinite alternate;
+			animation-delay: 0.6s;
+		}
+
+		&:nth-child(1) {
+			animation: dancingOne 1s infinite alternate;
+			animation-delay: 1s;
+		}
+	}
+
+	@keyframes dancingOne {
+		0% {
+			height: 25%;
+		}
+
+		50% {
+			height: 45%;
+		}
+
+		100% {
+			height: 60%;
+		}
+	}
+
+	@keyframes dancingTwo {
+		0% {
+			height: 20%;
+		}
+
+		50% {
+			height: 35%;
+		}
+
+		100% {
+			height: 50%;
+		}
+	}
+
+	@keyframes dancingThree {
+		0% {
+			height: 25%;
+		}
+
+		100% {
+			height: 40%;
+		}
+	}
+
+	@keyframes dancingFour {
+		0% {
+			height: 25%;
+		}
+
+		100% {
+			height: 35%;
+		}
+	}
+
+	// mobile/tablet devices
+
+	@media (width<= $mq-lg) {
+		&__mockup-container {
+			width: 25rem;
+		}
+
+		&__mockup-img {
+			top: 8px;
+			height: 96%;
+		}
+	}
+
+	@media (width<= $mq-xmd) {
+		overflow: hidden;
+		height: 120svh;
+
+		&__mockup-container {
+			video {
+				top: 6rem;
+				height: 13rem;
+				object-fit: cover;
+			}
+		}
+
+		&__mockup-img {
+			top: 9px;
+			height: 96%;
+		}
+
+		&__lines,
+		&__video-desc {
+			display: none;
+		}
+
+		&__gradiant-blur-img.left {
+			top: 67%;
+			left: 46%;
+		}
+
+		&__gradiant-blur-img.right {
+			position: absolute;
+			z-index: -1;
+			top: 67%;
+			left: 9%;
+			display: block;
+		}
+	}
+
+	@media (width<= 780px) {
+		&__gradiant-blur-img.left {
+			top: 75%;
+			left: 39%;
+			width: 92%;
+		}
+
+		&__gradiant-blur-img.right {
+			top: 76%;
+			left: 19%;
+			width: 89%;
+		}
+	}
+
+	@media (width<= $mq-xsm) {
+		height: 90svh;
+
+		&__mockup-container {
+			width: 24rem;
+
+			video {
+				top: 13%;
+				height: 11rem;
+				object-fit: cover;
+			}
+		}
+
+		&__head {
+			p {
+				padding-inline: 3.5rem;
+				text-wrap: pretty;
+			}
+		}
+
+		&__gradiant-blur-img.left {
+			top: 74%;
+			width: 92%;
+		}
+	}
+
+	@media (width<= 500px) {
+		&__gradiant-blur-img.left {
+			top: 73%;
+			left: 20%;
+			width: 100%;
+		}
+
+		&__gradiant-blur-img.right {
+			top: 74%;
+			left: 51%;
+			width: 100%;
+		}
+	}
+
+	@media (width<= $mq-sm) {
+		height: 110svh;
+
+		&__head p {
+			padding-inline: 1.5rem;
+		}
+
+		&__mockup-container {
+			width: 85%;
+			height: 48rem;
+
+			video {
+				height: 26%;
+				object-fit: cover;
+			}
+		}
+
+		&__mockup {
+			&-img {
+				top: 16px;
+				height: fit-content;
+				border-radius: 2.7rem;
+			}
+		}
+
+		&__gradiant-blur-img.left {
+			top: 81%;
+		}
+
+		&__gradiant-blur-img.right {
+			top: 81%;
+		}
+	}
+
+	@media (width<= 400px) {
+		height: 90svh;
+
+		&__mockup-container {
+			video {
+				top: 13%;
+				height: 20%;
+			}
+		}
+	}
+
+	@media (width<= 340px) {
+		&__mockup-container {
+			video {
+				top: 11%;
+				height: 17%;
+			}
+		}
+	}
+}

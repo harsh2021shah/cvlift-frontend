@@ -1,0 +1,171 @@
+@use "../abstracts" as *;
+
+// add width to mockup if the lotties mockup not loaded yet to fill images
+.ai__mockup:not(:has(svg)) {
+	aspect-ratio: 301 / 669;
+
+	// width: 27rem;
+	// height: 41rem;
+	width: 29.3rem;
+
+	img:not(.mockup__backup) {
+		// top: 5px;
+		// left: 0;
+		top: 5px;
+		left: 2px;
+		width: 98%;
+		object-fit: contain;
+		border-radius: 4rem;
+	}
+
+	.ai__mockup-images {
+		position: absolute;
+		z-index: 2;
+		top: 3%;
+		overflow: hidden;
+		aspect-ratio: 301 / 669;
+		width: 68%;
+		height: 92%;
+
+		.mockup__backup {
+			z-index: 5;
+			width: 100%;
+			object-fit: fill;
+		}
+	}
+}
+
+.ai {
+	position: relative;
+	overflow: hidden;
+	margin-block-end: $margin-section;
+
+	// add gradiant-blur effect in the background
+	&__gradiant-blur-img {
+		position: absolute;
+		z-index: -1;
+		top: -30%;
+		width: 103rem;
+		max-width: none;
+	}
+
+	&__main {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+		gap: 5rem;
+		height: 100vh;
+		height: 100svh;
+
+		// mobile/tablet devices
+		@media (width <= $mq-xmd) {
+			display: none;
+
+			&-mobile {
+				display: block;
+			}
+
+			&-mobile-card {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-bottom: rfs(4rem);
+				text-align: center;
+
+				&-gradiant-blur-img {
+					position: absolute;
+				}
+			}
+
+			&-mobile-assets {
+				position: relative;
+				max-width: rfs(25rem);
+				margin-bottom: rfs(4rem);
+			}
+
+			&-mobile-img {
+				position: absolute;
+				top: 2%;
+				left: 5%;
+				width: 90.5%;
+			}
+		}
+	}
+
+	&__mockup {
+		position: relative;
+		height: 79vh;
+		height: 79svh;
+
+		&-images {
+			position: absolute;
+			z-index: 2;
+			top: 5.5%;
+			left: 18.5%;
+			overflow: hidden;
+			width: 63%;
+			height: 88%;
+
+			img {
+				position: absolute;
+				height: 100%;
+				border-radius: 2rem;
+			}
+
+			img:nth-child(1) {
+				z-index: 1;
+
+				// top: 15px;
+				// left: 14px;
+				// border-radius: 6rem;
+			}
+
+			img:nth-child(2) {
+				z-index: 2;
+
+				// top: 15px;
+				// left: 14px;
+				// border-radius: 6rem;
+			}
+
+			img:nth-child(3) {
+				z-index: 3;
+
+				// top: 15px;
+				// left: 14px;
+				// border-radius: 6rem;
+			}
+
+			img:nth-child(4) {
+				z-index: 4;
+
+				// top: 15px;
+				// left: 14px;
+				// border-radius: 6rem;
+			}
+		}
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: 3.375rem;
+		justify-content: flex-end;
+		height: 70vh;
+		height: 70svh;
+	}
+
+	&__desc {
+		max-width: 25rem;
+
+		&-title {
+			margin-bottom: rfs(2rem);
+		}
+
+		&-paragraph {
+			padding: 0.2rem;
+		}
+	}
+}
