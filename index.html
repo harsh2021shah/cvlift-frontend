@@ -205,7 +205,7 @@
                     <!-- Basic Plan -->
                     <div class="col-lg-3 col-md-6">
                         <div class="pricing-card" data-plan="basic">
-                            <div class="pricing-badge popular-badge">Currently Active</div>
+                            <div class="pricing-badge popular-badge">Popular</div>
                             <div class="pricing-header">
                                 <h4 class="plan-name">Basic</h4>
                                 <p class="plan-period monthly-plan">Monthly Plan</p>
@@ -710,7 +710,7 @@
                 yearlyPlans.forEach(el => el.style.display = 'inline-block');
 
                 // Update button text for yearly
-                document.querySelectorAll('.pricing-card[data-plan="basic"] .pricing-btn').forEach(btn => btn.textContent = 'Currently Active');
+                document.querySelectorAll('.pricing-card[data-plan="basic"] .pricing-btn').forEach(btn => btn.textContent = 'Popular');
                 document.querySelectorAll('.pricing-card[data-plan="premium"] .pricing-btn').forEach(btn => btn.textContent = 'Subscribe Yearly');
             } else {
                 // Show monthly pricing
