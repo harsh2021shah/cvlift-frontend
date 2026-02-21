@@ -1151,3 +1151,22 @@
     margin-top: 10px;
   }
 }
+
+/* Mobile centering for CVLift hero and CTA sections */
+@media (max-width: 991px) {
+  .saas_banner_area_five .app_banner_content {
+    text-align: center;
+  }
+  .saas_banner_area_five .app_banner_content .saas_btn {
+    display: inline-block;
+  }
+  .app_promo_area .app_promo_content {
+    text-align: center;
+  }
+  .app_promo_area .app_promo_content .saas_btn {
+    display: inline-block;
+  }
+  .app_promo_area .app_promo_content .d-flex {
+    justify-content: center;
+  }
+}

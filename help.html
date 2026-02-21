@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" href="favicon.png"/>
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/themify-icons.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="css/animate.css" rel="stylesheet"/>
+    <link href="css/responsive.css" rel="stylesheet"/>
+
+    <title>Help - CVLift - AI-Powered Resume & Cover Letter Generator</title>
+</head>
+
+<body data-scroll-animation="true">
+
+    <div class="body_wrapper">
+        <!-- start header  -->
+        <nav class="navbar navbar-expand-lg menu_white sticky_nav">
+            <div class="container">
+                <a class="navbar-brand sticky_logo" href="index.html">
+                    <img src="imgs/logo-white.png" alt=""/>
+                    <img src="imgs/logo_dark.png" alt="logo"/>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav menu me-lg-auto ms-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#pricing">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="help.html">Help</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://blog.cvlift.me" target="_blank">Blog</a>
+                        </li>
+                    </ul>
+                    <div class="nav_right">
+                        <a href="https://app.cvlift.me/auth" class="login_btn">
+                            <div class="btn_text"><span>Login</span><span>Login</span></div>
+                        </a>
+                        <a href="https://app.cvlift.me/auth" class="signup_btn hover_effect">
+                            <div class="btn_text"><span>Get Started Free</span><span>Get Started Free</span></div>
+                        </a>
+                    </div>
+                </div>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu_toggle">
+                        <span class="hamburger">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="hamburger-cross">
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </span>
+                </button>
+            </div>
+        </nav>
+        <!-- End header  -->
+
+        <!-- Page Content -->
+        <section class="saas_banner_area five" data-bg-color="#121217" style="min-height: 60vh; display: flex; align-items: center;">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h1 class="title-animation text-white" style="font-size: 3rem; margin-bottom: 2rem;">Need Help?</h1>
+                        <p class="wow fadeInUp text-white mb-5" style="font-size: 1.2rem;">We're here to assist you. Reach out to us and we'll get back to you as soon as possible.</p>
+
+                        <div class="help_email_card wow fadeInUp" data-wow-delay="0.3s" style="background: #1a1a20; padding: 3rem; border-radius: 20px; margin-top: 2rem;">
+                            <h3 class="text-white mb-4">Contact Support</h3>
+                            <div class="email_display" style="background: #0F172A; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+                                <p class="text-white mb-2" style="font-size: 0.9rem; opacity: 0.7;">Email us at:</p>
+                                <p class="text-white mb-0" style="font-size: 1.5rem; font-weight: 600;" id="supportEmail">support@cvlift.me</p>
+                            </div>
+                            <div class="action_buttons d-flex gap-3 justify-content-center flex-wrap">
+                                <button class="saas_btn" onclick="copyEmail()">
+                                    <div class="btn_text">
+                                        <span>Copy Email</span>
+                                        <span>Copy Email</span>
+                                    </div>
+                                </button>
+                                <a href="mailto:support@cvlift.me" class="saas_btn">
+                                    <div class="btn_text">
+                                        <span>Send Email</span>
+                                        <span>Send Email</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <p id="copyMessage" class="text-white mt-3" style="opacity: 0; transition: opacity 0.3s;">Email copied to clipboard!</p>
+                        </div>
+
+                        <div class="faq_section mt-5">
+                            <h3 class="text-white mb-4">Frequently Asked Questions</h3>
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                            How do I get started with CVLift?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Simply sign up at app.cvlift.me/auth with your email. You'll get 10 free credits to start creating resumes immediately.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            How many credits does each resume generation cost?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Each resume generation costs 1 credit. Cover letters are included for free with each resume generation.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            Can I cancel my subscription anytime?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes! You can cancel your monthly subscription anytime from your dashboard. There are no long-term contracts.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer_area_two footer_area_three footer_shap" data-bg-color="#0F172A">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="f_widget f_about_widget">
+                            <a href="index.html" class="f_logo"><img src="imgs/f_logo_w.png" alt="CVLift Logo"/></a>
+                            <p>AI-powered resume and cover letter generator helping job seekers land their dream jobs.</p>
+                            <ul class="list-unstyled f_social_icon">
+                                <li><a href="https://twitter.com/cvlift" target="_blank"><i class="ti-twitter-alt"></i></a></li>
+                                <li><a href="https://linkedin.com/company/cvlift" target="_blank"><i class="ti-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="f_widget f_link_widget">
+                            <h3 class="f_title">PRODUCT</h3>
+                            <ul class="list-unstyled link_widget">
+                                <li><a href="index.html#features">Features</a></li>
+                                <li><a href="index.html#pricing">Pricing</a></li>
+                                <li><a href="help.html">Help</a></li>
+                                <li><a href="https://blog.cvlift.me" target="_blank">Blog</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="f_widget f_link_widget">
+                            <h3 class="f_title">LEGAL</h3>
+                            <ul class="list-unstyled link_widget">
+                                <li><a href="policy.html">Terms & Conditions</a></li>
+                                <li><a href="policy.html#privacy">Privacy Policy</a></li>
+                                <li><a href="policy.html#cancellation">Cancellation & Refunds</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_bottom text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="mb-0">© Copyright 2026, All Rights Reserved by <a href="https://cvlift.me">CVLift</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <script>
+        function copyEmail() {
+            const email = document.getElementById('supportEmail').textContent;
+            navigator.clipboard.writeText(email).then(function() {
+                const message = document.getElementById('copyMessage');
+                message.style.opacity = '1';
+                setTimeout(function() {
+                    message.style.opacity = '0';
+                }, 2000);
+            });
+        }
+    </script>
+</body></html>
