@@ -183,76 +183,153 @@
                 </div>
             </div>
         </section>
-        <section class="saas_accordion_area sec_padding" data-bg-color="#121217" id="pricing">
+        <section class="cvlift_pricing_area sec_padding" data-bg-color="#121217" id="pricing">
             <div class="container">
-                <div class="section_title_four text-center">
-                    <h2 class="title-animation">AI-Powered Resume Builder<br/> for Modern Job Seekers</h2>
+                <div class="section_title_four text-center mb-5">
+                    <h2 class="title-animation">Simple, Transparent Pricing</h2>
+                    <p class="mt-3">Choose the plan that fits your job search needs</p>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
-                        <img class="accordion_img wow fadeInLeft" data-wow-delay="0.4s" src="imgs/app_two.png" alt=""/>
+
+                <!-- Billing Toggle -->
+                <div class="billing-toggle-wrapper mb-5">
+                    <span class="billing-label">Monthly</span>
+                    <label class="billing-switch">
+                        <input type="checkbox" id="billingToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="billing-label">Yearly <span class="save-badge">Save 20%</span></span>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="row pricing-cards-row g-4 mb-5">
+                    <!-- Basic Plan -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-card" data-plan="basic">
+                            <div class="pricing-badge popular-badge">Currently Active</div>
+                            <div class="pricing-header">
+                                <h4 class="plan-name">Basic</h4>
+                                <p class="plan-period monthly-plan">Monthly Plan</p>
+                                <p class="plan-period yearly-plan" style="display:none;">Yearly Plan</p>
+                            </div>
+                            <div class="pricing-body">
+                                <div class="price monthly-plan">
+                                    <span class="price-amount">$9.00</span>
+                                    <span class="price-period">/mo</span>
+                                </div>
+                                <div class="price yearly-plan" style="display:none;">
+                                    <span class="price-amount">$108.00</span>
+                                    <span class="price-period">/mo</span>
+                                    <span class="price-discount">$86.40/mo</span>
+                                </div>
+                                <div class="credits-info">150 credits/month</div>
+                                <ul class="pricing-features">
+                                    <li><span class="check-icon">✓</span>150 credits/month</li>
+                                    <li><span class="check-icon">✓</span>Full access to all features</li>
+                                    <li><span class="check-icon">✓</span>ATS optimization</li>
+                                    <li><span class="check-icon">✓</span>PDF, DOCX, TXT export</li>
+                                    <li><span class="check-icon">✓</span><span class="monthly-plan">Email support</span><span class="yearly-plan" style="display:none;">Priority email support</span></li>
+                                    <li><span class="check-icon">✓</span>Credits expire monthly</li>
+                                    <li class="yearly-save" style="display:none;"><span class="check-icon">✓</span>20% discount - Save $21.60/year!</li>
+                                </ul>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn">Subscribe Monthly</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="accordion saas_accordion_item saas_accordion_item_two wow fadeInRight" data-wow-delay="0.5s" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Start Free with 10 Credits
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body ps-4">
-                                        Get started immediately with 10 free resume generations. No credit card required. Experience the power of AI-driven resume creation before you commit.
-                                    </div>
-                                </div>
+
+                    <!-- Standard Plan -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-card" data-plan="standard">
+                            <div class="pricing-badge savings-badge monthly-plan">44% savings vs PAYG!</div>
+                            <div class="pricing-header">
+                                <h4 class="plan-name">Standard</h4>
+                                <p class="plan-period monthly-plan">Monthly Plan</p>
+                                <p class="plan-period yearly-plan" style="display:none;">Yearly Plan</p>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Simple Pay-As-You-Go Pricing
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body ps-4">
-                                        Buy credits as you need them. Starting at just $1 for 20 credits. No monthly commitments, no hidden fees. Only pay for what you use.
-                                    </div>
+                            <div class="pricing-body">
+                                <div class="price monthly-plan">
+                                    <span class="price-amount">$14.00</span>
+                                    <span class="price-period">/mo</span>
                                 </div>
+                                <div class="price yearly-plan" style="display:none;">
+                                    <span class="price-amount">$168.00</span>
+                                    <span class="price-period">/mo</span>
+                                    <span class="price-discount">$134.40/mo</span>
+                                </div>
+                                <div class="credits-info">275 credits/month</div>
+                                <ul class="pricing-features">
+                                    <li><span class="check-icon">✓</span>275 credits/month</li>
+                                    <li><span class="check-icon">✓</span>Full access to all features</li>
+                                    <li><span class="check-icon">✓</span>ATS optimization</li>
+                                    <li><span class="check-icon">✓</span>PDF, DOCX, TXT export</li>
+                                    <li><span class="check-icon">✓</span>Priority support</li>
+                                    <li><span class="check-icon">✓</span>Credits expire monthly</li>
+                                    <li class="yearly-save" style="display:none;"><span class="check-icon">✓</span>20% discount - Save $33.60/year!</li>
+                                </ul>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn monthly-plan">Subscribe Monthly</a>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn yearly-plan" style="display:none;">Subscribe Yearly</a>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Monthly Plans Available
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body ps-4">
-                                        For active job seekers, choose our monthly plans. Get up to 500 credits per month at significant savings compared to pay-as-you-go.
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-card featured" data-plan="premium">
+                            <div class="pricing-badge best-value-badge">BEST VALUE</div>
+                            <div class="pricing-badge savings-badge monthly-plan">58% savings vs PAYG!</div>
+                            <div class="pricing-header">
+                                <h4 class="plan-name">Premium</h4>
+                                <p class="plan-period monthly-plan">Monthly Plan</p>
+                                <p class="plan-period yearly-plan" style="display:none;">Yearly Plan</p>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        All Templates Included
-                                    </button>
-                                </h2>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body ps-4">
-                                        Access all 10 professional templates with any plan. Each template is ATS-optimized and designed to help you pass recruiter screening systems.
-                                    </div>
+                            <div class="pricing-body">
+                                <div class="price monthly-plan">
+                                    <span class="price-amount">$24.00</span>
+                                    <span class="price-period">/mo</span>
                                 </div>
+                                <div class="price yearly-plan" style="display:none;">
+                                    <span class="price-amount">$288.00</span>
+                                    <span class="price-period">/mo</span>
+                                    <span class="price-discount">$230.40/mo</span>
+                                </div>
+                                <div class="credits-info">500 credits/month</div>
+                                <ul class="pricing-features">
+                                    <li><span class="check-icon">✓</span>500 credits/month</li>
+                                    <li><span class="check-icon">✓</span>Full access to all features</li>
+                                    <li><span class="check-icon">✓</span>ATS optimization</li>
+                                    <li><span class="check-icon">✓</span><span class="monthly-plan">PDF, DOCX, TXT export</span><span class="yearly-plan" style="display:none;">All export formats</span></li>
+                                    <li><span class="check-icon">✓</span>Priority support</li>
+                                    <li><span class="check-icon">✓</span>Credits expire monthly</li>
+                                    <li class="yearly-save" style="display:none;"><span class="check-icon">✓</span>Best value - Save $57.60/year!</li>
+                                </ul>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn monthly-plan">Subscribe Monthly</a>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn yearly-plan" style="display:none;">Subscribe Yearly</a>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingFive">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                        Cancel Anytime
-                                    </button>
-                                </h2>
-                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body ps-4">
-                                        No long-term contracts. Monthly plans can be cancelled anytime. Your unused credits never expire on pay-as-you-go plans.
-                                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Pay As You Go -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="pricing-card pay-as-you-go" data-plan="payg">
+                            <div class="pricing-badge flexible-badge">Flexible option</div>
+                            <div class="pricing-header">
+                                <h4 class="plan-name">Pay As You Go</h4>
+                                <p class="plan-period">No commitment</p>
+                            </div>
+                            <div class="pricing-body">
+                                <div class="price">
+                                    <span class="price-amount">$1</span>
+                                    <span class="price-period">/credit pack</span>
                                 </div>
+                                <div class="credits-info">20 credits per $1 spent</div>
+                                <ul class="pricing-features">
+                                    <li><span class="check-icon">✓</span>Minimum $3 purchase</li>
+                                    <li><span class="check-icon">✓</span>No commitment required</li>
+                                    <li><span class="check-icon">✓</span>All templates included</li>
+                                    <li><span class="check-icon">✓</span>ATS optimization</li>
+                                    <li><span class="check-icon">✓</span>All export formats</li>
+                                    <li class="highlight"><span class="check-icon">✓</span>Credits never expire</li>
+                                </ul>
+                                <a href="https://app.cvlift.me/auth" class="pricing-btn">Buy Credits</a>
                             </div>
                         </div>
                     </div>
@@ -349,6 +426,82 @@
                             </div>
                             <h4>24/7 Support</h4>
                             <p>Get help whenever you need it. Our team is always ready to assist you.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="saas_accordion_area sec_padding" data-bg-color="#121217" id="how-it-works">
+            <div class="container">
+                <div class="section_title_four text-center">
+                    <h2 class="title-animation">AI-Powered Resume Builder<br/> for Modern Job Seekers</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img class="accordion_img wow fadeInLeft" data-wow-delay="0.4s" src="imgs/app_two.png" alt=""/>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="accordion saas_accordion_item saas_accordion_item_two wow fadeInRight" data-wow-delay="0.5s" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Start Free with 10 Credits
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-4">
+                                        Get started immediately with 10 free resume generations. No credit card required. Experience the power of AI-driven resume creation before you commit.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Simple Pay-As-You-Go Pricing
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-4">
+                                        Buy credits as you need them. Starting at just $1 for 20 credits. No monthly commitments, no hidden fees. Only pay for what you use.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Monthly Plans Available
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-4">
+                                        For active job seekers, choose our monthly plans. Get up to 500 credits per month at significant savings compared to pay-as-you-go.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        All Templates Included
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-4">
+                                        Access all 10 professional templates with any plan. Each template is ATS-optimized and designed to help you pass recruiter screening systems.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Cancel Anytime
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ps-4">
+                                        No long-term contracts. Monthly plans can be cancelled anytime. Your unused credits never expire on pay-as-you-go plans.
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -488,8 +641,8 @@
                             <a href="index.html" class="f_logo"><img src="imgs/f_logo_w.png" alt="CVLift Logo"/></a>
                             <p>AI-powered resume and cover letter generator helping job seekers land their dream jobs. Create ATS-optimized resumes in seconds.</p>
                             <ul class="list-unstyled f_social_icon">
-                                <li><a href="https://twitter.com/cvlift" target="_blank"><i class="ti-twitter-alt"></i></a></li>
-                                <li><a href="https://linkedin.com/company/cvlift" target="_blank"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="https://twitter.com/cvlift" target="_blank" aria-label="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://linkedin.com/company/cvlift" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -543,6 +696,33 @@
     <script src="js/wow.min.js"></script>
     <script src="js/custom.js"></script>
 
+    <!-- CVLift Pricing Toggle Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const billingToggle = document.getElementById('billingToggle');
+        const monthlyPlans = document.querySelectorAll('.monthly-plan');
+        const yearlyPlans = document.querySelectorAll('.yearly-plan');
 
+        billingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Show yearly pricing
+                monthlyPlans.forEach(el => el.style.display = 'none');
+                yearlyPlans.forEach(el => el.style.display = 'inline-block');
+
+                // Update button text for yearly
+                document.querySelectorAll('.pricing-card[data-plan="basic"] .pricing-btn').forEach(btn => btn.textContent = 'Currently Active');
+                document.querySelectorAll('.pricing-card[data-plan="premium"] .pricing-btn').forEach(btn => btn.textContent = 'Subscribe Yearly');
+            } else {
+                // Show monthly pricing
+                monthlyPlans.forEach(el => el.style.display = 'inline-block');
+                yearlyPlans.forEach(el => el.style.display = 'none');
+
+                // Update button text for monthly
+                document.querySelectorAll('.pricing-card[data-plan="basic"] .pricing-btn').forEach(btn => btn.textContent = 'Subscribe Monthly');
+                document.querySelectorAll('.pricing-card[data-plan="premium"] .pricing-btn').forEach(btn => btn.textContent = 'Subscribe Monthly');
+            }
+        });
+    });
+    </script>
 
 </body></html>

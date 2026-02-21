@@ -4416,3 +4416,252 @@ img.about_mission_img {
   font-weight: 400;
 }
 
+
+/* CVLift Pricing Cards Styles */
+.cvlift_pricing_area {
+  position: relative;
+}
+
+/* Billing Toggle */
+.billing-toggle-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+}
+
+.billing-label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.save-badge {
+  background: linear-gradient(135deg, #7B71FE 0%, #FFA31A 100%);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.billing-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+}
+
+.billing-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3f3f46;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background: linear-gradient(135deg, #7B71FE 0%, #FFA31A 100%);
+}
+
+input:checked + .slider:before {
+  transform: translateX(28px);
+}
+
+/* Pricing Cards */
+.pricing-cards-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pricing-card {
+  background: #1a1a20;
+  border-radius: 20px;
+  padding: 30px 25px;
+  position: relative;
+  height: 100%;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  border-color: #7B71FE;
+}
+
+.pricing-card.featured {
+  border: 2px solid #7B71FE;
+  background: linear-gradient(180deg, rgba(123, 113, 254, 0.1) 0%, #1a1a20 100%);
+}
+
+.pricing-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 15px;
+}
+
+.popular-badge {
+  background: rgba(123, 113, 254, 0.2);
+  color: #7B71FE;
+}
+
+.best-value-badge {
+  background: linear-gradient(135deg, #7B71FE 0%, #FFA31A 100%);
+  color: #fff;
+}
+
+.savings-badge {
+  background: rgba(255, 163, 26, 0.2);
+  color: #FFA31A;
+}
+
+.flexible-badge {
+  background: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+}
+
+.pricing-header {
+  margin-bottom: 20px;
+}
+
+.pricing-header h4 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.plan-period {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.pricing-body {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 100px);
+}
+
+.price {
+  margin-bottom: 10px;
+}
+
+.price-amount {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.price-period {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 16px;
+}
+
+.price-discount {
+  display: block;
+  color: #FFA31A;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.credits-info {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+  flex-grow: 1;
+}
+
+.pricing-features li {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pricing-features li.highlight {
+  color: #7B71FE;
+  font-weight: 600;
+}
+
+.check-icon {
+  color: #7B71FE;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.pricing-btn {
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #7B71FE 0%, #FFA31A 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.pricing-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(123, 113, 254, 0.3);
+}
+
+.pricing-card.pay-as-you-go .pricing-btn {
+  background: transparent;
+  border: 2px solid #7B71FE;
+}
+
+.pricing-card.pay-as-you-go .pricing-btn:hover {
+  background: #7B71FE;
+}
+
+/* Mobile responsive for pricing */
+@media (max-width: 991px) {
+  .pricing-cards-row {
+    justify-content: center;
+  }
+  
+  .pricing-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
