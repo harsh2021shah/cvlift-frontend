@@ -37,7 +37,7 @@ Deploy a **Cloudflare Worker** at `api.cvlift.me` that:
 - No Docker, no Node server, no hosting bill
 
 ```
-User browser  →  cvlift.me/tools.html  (GitHub Pages, static)
+User browser  →  cvlift.me/free-tools/  (GitHub Pages, static)
      ↓
 User submits tool input
      ↓
@@ -136,14 +136,14 @@ Error:    { "error": "rate_limit_exceeded" }  →  HTTP 429
 
 ---
 
-## Phase 1 — `tools.html` Page Shell
+## Phase 1 — `free-tools/` Page Shell
 
 **Duration:** 1–2 days
 **Depends on:** Phase 0
 
 ### Tasks
 
-- [ ] Create `tools.html` in the repo root — matches the existing dark SaaS Bootstrap 5 theme
+- [ ] Create `free-tools/` in the repo root — matches the existing dark SaaS Bootstrap 5 theme
 - [ ] Build a **tool selector grid**: cards for all 15 tools, grouped by tier with tier labels
 - [ ] Build a single **tool panel** that swaps content on card click (no page reloads)
 - [ ] Each tool panel contains:
@@ -151,8 +151,8 @@ Error:    { "error": "rate_limit_exceeded" }  →  HTTP 429
   - Run button
   - Results display area with copy buttons where relevant
   - Subtle CTA at the bottom: *"Want your full resume done in 60 seconds? →"*
-- [ ] Add deep-linkable URL hashes per tool (e.g. `/tools.html#ats-checker`)
-- [ ] Add `tools.html` link to the nav in `index.html` and the footer
+- [ ] Add deep-linkable URL hashes per tool (e.g. `/free-tools/ats-checker`)
+- [ ] Add `free-tools/` link to the nav in `index.html` and the footer
 - [ ] Add a "Free Tools" section to `index.html` showcasing the tool hub
 - [ ] Add `<meta>` SEO tags targeting the exact search queries listed in the tool table above
 
@@ -380,7 +380,7 @@ signup. This is the real backstop — the `localStorage` layer is UX only.
 - Bottom of every tool result panel (always visible after a result loads)
 - The rate-limit modal (triggered on HTTP 429)
 - A sticky banner shown after the user's first completed tool use
-- `index.html` — a dedicated "Free Tools" section with a link to `tools.html`
+- `index.html` — a dedicated "Free Tools" section with a link to `free-tools/`
 
 ---
 
@@ -389,7 +389,7 @@ signup. This is the real backstop — the `localStorage` layer is UX only.
 **Duration:** 2 days
 **Depends on:** Phase 4 deployed
 
-- [ ] Add `sitemap.xml` including `tools.html` and all 15 hash URLs
+- [ ] Add `sitemap.xml` including `free-tools/` and all 15 hash URLs
 - [ ] Confirm `robots.txt` allows crawling of the tools page
 - [ ] Add `application/ld+json` structured data markup for each tool
 - [ ] Ensure the tool selector grid text is in the static HTML (not JS-rendered only) so crawlers index it
@@ -403,7 +403,7 @@ signup. This is the real backstop — the `localStorage` layer is UX only.
 | Phase | What | Duration | Cumulative total |
 |---|---|---|---|
 | 0 | Cloudflare Worker setup | 1 day | Day 1 |
-| 1 | `tools.html` shell + nav updates | 1–2 days | Day 3 |
+| 1 | `free-tools/` shell + nav updates | 1–2 days | Day 3 |
 | 2 | V1: 5 tools live (Tools 1–5) | 4–5 days | Day 8 |
 | 3 | V2: 5 more tools (Tools 6–10) | 5–6 days | Day 14 |
 | 4 | V3: Final 5 tools (Tools 11–15) | 5–7 days | Day 21 |
@@ -419,7 +419,7 @@ signup. This is the real backstop — the `localStorage` layer is UX only.
 
 | File | Change |
 |---|---|
-| `tools.html` | New — full tool hub page |
+| `free-tools/` | New — full tool hub page |
 | `index.html` | Add nav link + "Free Tools" section |
 | `js/tools.js` | New — tool UI logic, Worker calls, localStorage gate |
 | `css/tools.css` | New — tool-specific styles (or extend `style.css`) |
