@@ -246,7 +246,24 @@
 
   let usageState = getInitialUsage();
   let toolGateState = getToolGateState();
-  let activeTool = window.location.hash.replace("#", "") || "ats-checker";
+
+  function getToolFromPathname() {
+    const pathname = (window.location.pathname || "").replace(/\/+$/, "");
+    const segments = pathname.split("/").filter(Boolean);
+
+    if (segments.length < 2) {
+      return "";
+    }
+
+    if (segments[segments.length - 2] === "free-tools") {
+      return segments[segments.length - 1];
+    }
+
+    return "";
+  }
+
+  const queryTool = new URLSearchParams(window.location.search).get("tool");
+  let activeTool = window.CVLIFT_INITIAL_TOOL || queryTool || getToolFromPathname() || window.location.hash.replace("#", "") || "ats-checker";
 
   if (!toolDefinitions[activeTool]) {
     activeTool = "ats-checker";
@@ -829,7 +846,9 @@
 
   function selectTool(toolKey) {
     activeTool = toolKey;
-    window.location.hash = toolKey;
+    if (!queryTool && window.location.pathname.indexOf("/free-tools/") === -1) {
+      window.location.hash = toolKey;
+    }
     selectorButtons.forEach(function (button) {
       button.classList.toggle("is-active", button.getAttribute("data-tool") === toolKey);
     });
