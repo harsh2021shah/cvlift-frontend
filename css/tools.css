@@ -86,15 +86,23 @@
   padding: 20px 0 30px;
 }
 
+.tool_tier_section {
+  margin-bottom: 48px;
+}
+
+.tool_tier_section:last-child {
+  margin-bottom: 0;
+}
+
 .tool_tier_label {
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 18px;
-  margin-top: 6px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(141, 211, 255, 0.3);
 }
 
 .tool_card {
