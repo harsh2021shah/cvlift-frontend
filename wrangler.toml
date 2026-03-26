@@ -4,7 +4,7 @@ compatibility_date = "2026-03-26"
 
 [[kv_namespaces]]
 binding = "RATE_LIMITS"
-id = "YOUR_KV_NAMESPACE_ID_HERE"
+id = "54645e77a7da457394641be375bcac99"
 
 [vars]
 ENVIRONMENT = "production"
