@@ -1,0 +1,14 @@
+name = "cvlift-tools-api"
+main = "src/index.js"
+compatibility_date = "2026-03-26"
+
+[[kv_namespaces]]
+binding = "RATE_LIMITS"
+id = "YOUR_KV_NAMESPACE_ID_HERE"
+
+[vars]
+ENVIRONMENT = "production"
+
+[[routes]]
+pattern = "api.cvlift.me/tool"
+zone_name = "cvlift.me"
