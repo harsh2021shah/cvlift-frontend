@@ -255,7 +255,7 @@
                             <button type="submit" class="saas_btn">
                                 <div class="btn_text"><span>Run Tool</span><span>Run Tool</span></div>
                             </button>
-                            <p class="tool_form_note">Results are generated through the configured API endpoint. Until the Worker is live, the page will show a setup message instead of live AI output.</p>
+                            <p class="tool_form_note">Results are generated through the configured API endpoint. If the AI provider is unavailable or over quota, the page will show the live error message here.</p>
                         </div>
                     </form>
 
@@ -278,7 +278,7 @@
             <div class="container">
                 <div class="tools_disclosure_box">
                     <h3>How this is wired</h3>
-                    <p>This page is static and ready for GitHub Pages. Live AI output depends on a separate API at <strong>api.cvlift.me</strong>. The frontend already supports the integration and graceful failure states.</p>
+                    <p>This page is static on GitHub Pages and connected to the Worker at <strong>api.cvlift.me</strong>. Live AI output still depends on provider availability, quotas, and configured secrets.</p>
                 </div>
             </div>
         </section>

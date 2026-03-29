@@ -549,10 +549,16 @@
   }
 
   function renderSetupMessage(errorMessage) {
+    const isDeploymentIssue = /api not live|worker endpoint|not be deployed|endpoint still needs to be deployed/i.test(errorMessage || "");
+    const title = isDeploymentIssue ? "API not live yet" : "Tool unavailable right now";
+    const body = isDeploymentIssue
+      ? 'This frontend is ready, but the Cloudflare Worker endpoint still needs to be deployed at <strong>api.cvlift.me</strong>.'
+      : 'This tool is connected, but the provider request could not be completed. Check the message below for the current blocker.';
+
     toolResults.innerHTML =
       '<div class="result_callout">' +
-        '<div class="result_section_title">API not live yet</div>' +
-        '<p>This frontend is ready, but the Cloudflare Worker endpoint still needs to be deployed at <strong>api.cvlift.me</strong>.</p>' +
+        '<div class="result_section_title">' + title + '</div>' +
+        '<p>' + body + '</p>' +
         '<p class="result_hint">' + escapeHtml(errorMessage || "The request could not be completed.") + '</p>' +
       '</div>';
   }
@@ -838,7 +844,18 @@
     }
 
     if (!response.ok) {
-      throw new Error("Tool request failed with status " + response.status + ".");
+      let errorMessage = "Tool request failed with status " + response.status + ".";
+
+      try {
+        const errorPayload = await response.json();
+        if (errorPayload && errorPayload.error) {
+          errorMessage = errorPayload.error;
+        }
+      } catch (error) {
+        // Ignore body parsing failures and fall back to the HTTP status message.
+      }
+
+      throw new Error(errorMessage);
     }
 
     return response.json();
