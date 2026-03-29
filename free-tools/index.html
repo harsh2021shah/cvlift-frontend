@@ -102,14 +102,14 @@
             <div class="container">
                 <div class="section_title_four text-center mb-5">
                     <h2 class="title-animation">Choose a free tool</h2>
-                    <p class="tools_subtitle">All 15 tools are grouped by funnel tier and run in the panel below without page reloads.</p>
+                    <p class="tools_subtitle">All 15 tools are grouped by funnel tier. Open any card to use that tool on its own dedicated page.</p>
                 </div>
 
                 <div class="tool_tier_section">
                     <h3 class="tool_tier_label">Tier 1: Awareness tools</h3>
                     <div class="row g-4 tools_grid" id="toolSelectorGrid">
                         <div class="col-lg-4 col-md-6">
-                            <a class="tool_card is-active" href="/free-tools/ats-checker/">
+                            <a class="tool_card" href="/free-tools/ats-checker/">
                                 <span class="tool_card_tag">Most searched</span>
                                 <h3>ATS Score Checker</h3>
                                 <p>Paste your resume and a job title to see match strength, missing keywords, and quick verdicts.</p>
@@ -230,55 +230,11 @@
             </div>
         </section>
 
-        <section class="tool_panel_area sec_padding" data-bg-color="#0F172A">
-            <div class="container">
-                <div class="sticky_tools_banner" id="stickyToolsBanner" hidden>
-                    <div>
-                        <strong>Keep going.</strong> You have started using CVLift free tools.
-                    </div>
-                    <a href="https://app.cvlift.me/auth" class="sticky_tools_link">Build your full AI resume</a>
-                </div>
-
-                <div class="tool_panel_shell">
-                    <div class="tool_panel_header">
-                        <div>
-                            <p class="tool_panel_label" id="toolPanelLabel">free ats resume checker</p>
-                            <h2 id="toolPanelTitle">ATS Score Checker</h2>
-                            <p id="toolPanelDescription">Paste your resume and a target job title to get a keyword match score and improvement guidance.</p>
-                        </div>
-                        <div class="tool_panel_status" id="toolPanelStatus">Ready</div>
-                    </div>
-
-                    <form id="toolForm" class="tool_form" novalidate>
-                        <div id="toolFields" class="tool_fields"></div>
-                        <div class="tool_form_actions">
-                            <button type="submit" class="saas_btn">
-                                <div class="btn_text"><span>Run Tool</span><span>Run Tool</span></div>
-                            </button>
-                            <p class="tool_form_note">Results are generated through the configured API endpoint. If the AI provider is unavailable or over quota, the page will show the live error message here.</p>
-                        </div>
-                    </form>
-
-                    <div class="tool_results" id="toolResults" aria-live="polite">
-                        <div class="tool_empty_state">
-                            <h3>Run a tool to see the result</h3>
-                            <p>Your output appears here with a conversion CTA below it.</p>
-                        </div>
-                    </div>
-
-                    <div class="tool_result_cta">
-                        <p>Want your full resume done in 60 seconds?</p>
-                        <a href="https://app.cvlift.me/auth">Get started free</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="tools_disclosure_area" data-bg-color="#121217">
             <div class="container">
                 <div class="tools_disclosure_box">
                     <h3>How this is wired</h3>
-                    <p>This page is static on GitHub Pages and connected to the Worker at <strong>api.cvlift.me</strong>. Live AI output still depends on provider availability, quotas, and configured secrets.</p>
+                    <p>This hub links to dedicated tool pages under <strong>/free-tools/</strong>. Each tool page connects to the Worker at <strong>api.cvlift.me</strong> for AI-backed responses.</p>
                 </div>
             </div>
         </section>
@@ -329,27 +285,10 @@
         </footer>
     </div>
 
-    <div class="tools_modal" id="usageModal" hidden>
-        <div class="tools_modal_backdrop" data-close-modal="true"></div>
-        <div class="tools_modal_dialog" role="dialog" aria-modal="true" aria-labelledby="usageModalTitle">
-            <button class="tools_modal_close" type="button" data-close-modal="true" aria-label="Close">×</button>
-            <p class="tools_modal_tag">Free limit reached</p>
-            <h3 id="usageModalTitle">You've used 3 free checks today</h3>
-            <p>Sign up for CVLift to keep going with unlimited tools and build your full AI resume in 60 seconds.</p>
-            <div class="tools_modal_actions">
-                <a href="https://app.cvlift.me/auth" class="saas_btn">
-                    <div class="btn_text"><span>Get Started Free</span><span>Get Started Free</span></div>
-                </a>
-                <button type="button" class="tools_modal_later" data-close-modal="true">Maybe later</button>
-            </div>
-        </div>
-    </div>
-
     <script src="../js/jquery-3.6.0.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/wow.min.js"></script>
     <script src="../js/custom.js"></script>
-    <script src="../js/tools.js"></script>
 </body></html>
 
