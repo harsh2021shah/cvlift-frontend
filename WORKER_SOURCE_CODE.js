@@ -82,28 +82,28 @@ async function routeToolToProvider(tool, input, env) {
   // AI provider preferences per tool
   const providers = {
     // Tier 1 - Awareness tools (Gemini Flash primarily)
-    "ats-checker": ["gemini"],
-    "keyword-density": ["gemini"],
-    "resume-length": ["gemini"], // Local JS, but could use AI for advice
-    "salary-lookup": ["gemini"],
-    "subject-line-generator": ["gemini"],
+    "ats-checker": ["gemini", "openrouter"],
+    "keyword-density": ["gemini", "openrouter"],
+    "resume-length": ["gemini", "openrouter"], // Local JS, but could use AI for advice
+    "salary-lookup": ["gemini", "openrouter"],
+    "subject-line-generator": ["gemini", "openrouter"],
 
     // Tier 2 - Engagement tools (Gemini for structured, Grok for creative)
-    "resume-scorecard": ["gemini"],
-    "headline-generator": ["grok", "gemini"],
-    "skills-gap": ["gemini"],
-    "jd-decoder": ["gemini"],
-    "career-quiz": ["gemini"],
+    "resume-scorecard": ["gemini", "openrouter"],
+    "headline-generator": ["grok", "gemini", "openrouter"],
+    "skills-gap": ["gemini", "openrouter"],
+    "jd-decoder": ["gemini", "openrouter"],
+    "career-quiz": ["gemini", "openrouter"],
 
     // Tier 3 - Conversion tools (Grok for creative, Gemini fallback)
-    "bullet-rewriter": ["grok", "gemini"],
-    "resume-tailor-preview": ["gemini"],
-    "cold-email-generator": ["grok", "gemini"],
-    "interview-question-generator": ["gemini"],
-    "pdf-formatter-preview": ["gemini"],
+    "bullet-rewriter": ["grok", "gemini", "openrouter"],
+    "resume-tailor-preview": ["gemini", "openrouter"],
+    "cold-email-generator": ["grok", "gemini", "openrouter"],
+    "interview-question-generator": ["gemini", "openrouter"],
+    "pdf-formatter-preview": ["gemini", "openrouter"],
   };
 
-  const toolProviders = providers[tool] || ["gemini"];
+  const toolProviders = providers[tool] || ["gemini", "openrouter"];
 
   // Try each provider in order until one succeeds
   for (const provider of toolProviders) {
@@ -157,14 +157,7 @@ async function callGemini(tool, input, env) {
 
   const data = await response.json();
   const text = data.candidates[0]?.content?.parts[0]?.text || "";
-
-  // Parse JSON response from Gemini
-  try {
-    return JSON.parse(text);
-  } catch {
-    // If not valid JSON, return as text
-    return { text: text };
-  }
+  return parseModelJson(text);
 }
 
 /**
@@ -197,12 +190,7 @@ async function callGrok(tool, input, env) {
 
   const data = await response.json();
   const text = data.choices[0]?.message?.content || "";
-
-  try {
-    return JSON.parse(text);
-  } catch {
-    return { text: text };
-  }
+  return parseModelJson(text);
 }
 
 /**
@@ -219,9 +207,11 @@ async function callOpenRouter(tool, input, env) {
     headers: {
       "Authorization": `Bearer ${apiKey}`,
       "Content-Type": "application/json",
+      "HTTP-Referer": "https://cvlift.me",
+      "X-Title": "CVLift Tools API",
     },
     body: JSON.stringify({
-      model: "meta-llama/llama-2-7b-chat",
+      model: "openrouter/auto",
       messages: [{ role: "user", content: prompt }],
       temperature: 0.7,
     }),
@@ -234,11 +224,34 @@ async function callOpenRouter(tool, input, env) {
 
   const data = await response.json();
   const text = data.choices[0]?.message?.content || "";
+  return parseModelJson(text);
+}
+
+function parseModelJson(text) {
+  const raw = String(text || "").trim();
+
+  if (!raw) {
+    return { text: "" };
+  }
+
+  const withoutFence = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
 
   try {
-    return JSON.parse(text);
-  } catch {
-    return { text: text };
+    return JSON.parse(withoutFence);
+  } catch (error) {
+    const start = withoutFence.indexOf("{");
+    const end = withoutFence.lastIndexOf("}");
+
+    if (start !== -1 && end > start) {
+      const candidate = withoutFence.slice(start, end + 1);
+      try {
+        return JSON.parse(candidate);
+      } catch (innerError) {
+        return { text: raw };
+      }
+    }
+
+    return { text: raw };
   }
 }
 

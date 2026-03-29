@@ -65,24 +65,24 @@ export default {
 
 async function routeToolToProvider(tool, input, env) {
   const providers = {
-    "ats-checker": ["gemini"],
-    "keyword-density": ["gemini"],
-    "resume-length": ["gemini"],
-    "salary-lookup": ["gemini"],
-    "subject-line-generator": ["gemini"],
-    "resume-scorecard": ["gemini"],
-    "headline-generator": ["grok", "gemini"],
-    "skills-gap": ["gemini"],
-    "jd-decoder": ["gemini"],
-    "career-quiz": ["gemini"],
-    "bullet-rewriter": ["grok", "gemini"],
-    "resume-tailor-preview": ["gemini"],
-    "cold-email-generator": ["grok", "gemini"],
-    "interview-question-generator": ["gemini"],
-    "pdf-formatter-preview": ["gemini"],
+    "ats-checker": ["gemini", "openrouter"],
+    "keyword-density": ["gemini", "openrouter"],
+    "resume-length": ["gemini", "openrouter"],
+    "salary-lookup": ["gemini", "openrouter"],
+    "subject-line-generator": ["gemini", "openrouter"],
+    "resume-scorecard": ["gemini", "openrouter"],
+    "headline-generator": ["grok", "gemini", "openrouter"],
+    "skills-gap": ["gemini", "openrouter"],
+    "jd-decoder": ["gemini", "openrouter"],
+    "career-quiz": ["gemini", "openrouter"],
+    "bullet-rewriter": ["grok", "gemini", "openrouter"],
+    "resume-tailor-preview": ["gemini", "openrouter"],
+    "cold-email-generator": ["grok", "gemini", "openrouter"],
+    "interview-question-generator": ["gemini", "openrouter"],
+    "pdf-formatter-preview": ["gemini", "openrouter"],
   };
 
-  const toolProviders = providers[tool] || ["gemini"];
+  const toolProviders = providers[tool] || ["gemini", "openrouter"];
 
   for (const provider of toolProviders) {
     try {
@@ -132,12 +132,7 @@ async function callGemini(tool, input, env) {
 
   const data = await response.json();
   const text = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
-
-  try {
-    return JSON.parse(text);
-  } catch {
-    return { text };
-  }
+  return parseModelJson(text);
 }
 
 async function callGrok(tool, input, env) {
@@ -167,12 +162,7 @@ async function callGrok(tool, input, env) {
 
   const data = await response.json();
   const text = data.choices?.[0]?.message?.content || "";
-
-  try {
-    return JSON.parse(text);
-  } catch {
-    return { text };
-  }
+  return parseModelJson(text);
 }
 
 async function callOpenRouter(tool, input, env) {
@@ -187,9 +177,11 @@ async function callOpenRouter(tool, input, env) {
     headers: {
       Authorization: `Bearer ${apiKey}`,
       "Content-Type": "application/json",
+      "HTTP-Referer": "https://cvlift.me",
+      "X-Title": "CVLift Tools API",
     },
     body: JSON.stringify({
-      model: "meta-llama/llama-3.1-8b-instruct:free",
+      model: "openrouter/auto",
       messages: [{ role: "user", content: prompt }],
       temperature: 0.7,
     }),
@@ -202,11 +194,34 @@ async function callOpenRouter(tool, input, env) {
 
   const data = await response.json();
   const text = data.choices?.[0]?.message?.content || "";
+  return parseModelJson(text);
+}
+
+function parseModelJson(text) {
+  const raw = String(text || "").trim();
+
+  if (!raw) {
+    return { text: "" };
+  }
+
+  const withoutFence = raw.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
 
   try {
-    return JSON.parse(text);
-  } catch {
-    return { text };
+    return JSON.parse(withoutFence);
+  } catch (error) {
+    const start = withoutFence.indexOf("{");
+    const end = withoutFence.lastIndexOf("}");
+
+    if (start !== -1 && end > start) {
+      const candidate = withoutFence.slice(start, end + 1);
+      try {
+        return JSON.parse(candidate);
+      } catch (innerError) {
+        return { text: raw };
+      }
+    }
+
+    return { text: raw };
   }
 }
 
