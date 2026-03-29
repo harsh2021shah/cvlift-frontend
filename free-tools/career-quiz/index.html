@@ -3,12 +3,123 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>CVLift Free Tool</title>
-  <meta name="robots" content="index,follow"/>
+  <link rel="shortcut icon" href="../../imgs/favicon.png"/>
+  <link href="../../css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../../css/themify-icons.css" rel="stylesheet"/>
+  <link href="../../css/style.css" rel="stylesheet"/>
+  <link href="../../css/animate.css" rel="stylesheet"/>
+  <link href="../../css/responsive.css" rel="stylesheet"/>
+  <link href="../../css/tools.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <meta name="description" content="Answer five quick questions to get role-fit suggestions."/>
+  <meta property="og:title" content="Career Path Quiz - CVLift Free Tool"/>
+  <meta property="og:description" content="Answer five quick questions to get role-fit suggestions."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://cvlift.me/free-tools/career-quiz/"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <link rel="canonical" href="https://cvlift.me/free-tools/career-quiz/"/>
-  <script>window.location.replace("/free-tools/?tool=career-quiz");</script>
+  <title>Career Path Quiz - CVLift Free Tool</title>
 </head>
-<body>
-  <p>Redirecting to the selected tool. <a href="/free-tools/?tool=career-quiz">Continue</a></p>
+<body data-scroll-animation="true">
+  <div class="body_wrapper">
+    <nav class="navbar navbar-expand-lg menu_white sticky_nav">
+      <div class="container">
+        <a class="navbar-brand sticky_logo" href="../../index.html">
+          <img src="../../imgs/logo-white.png" alt="CVLift"/>
+          <img src="../../imgs/logo_dark.png" alt="CVLift"/>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav menu me-lg-auto ms-lg-auto">
+            <li class="nav-item"><a class="nav-link" href="../../index.html#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../index.html#pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" href="../index.html">Free Tools</a></li>
+            <li class="nav-item"><a class="nav-link" href="../../help.html">Help</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://blog.cvlift.me" target="_blank" rel="noopener noreferrer">Blog</a></li>
+          </ul>
+          <div class="nav_right">
+            <a href="https://app.cvlift.me/auth" class="login_btn"><div class="btn_text"><span>Login</span><span>Login</span></div></a>
+            <a href="https://app.cvlift.me/auth" class="signup_btn hover_effect"><div class="btn_text"><span>Get Started Free</span><span>Get Started Free</span></div></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="tools_hero_area" data-bg-color="#121217">
+      <div class="container">
+        <div class="tools_hero_content">
+          <span class="tools_eyebrow">Free Resume Tool</span>
+          <h1 class="title-animation">Career Path Quiz</h1>
+          <p>Answer five quick questions to get role-fit suggestions.</p>
+          <div class="tools_hero_meta"><span><a href="../index.html">View all 15 free tools</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tool_panel_area sec_padding" data-bg-color="#0F172A">
+      <div class="container">
+        <div class="sticky_tools_banner" id="stickyToolsBanner" hidden>
+          <div><strong>Keep going.</strong> You have started using CVLift free tools.</div>
+          <a href="https://app.cvlift.me/auth" class="sticky_tools_link">Build your full AI resume</a>
+        </div>
+
+        <div class="tool_panel_shell">
+          <div class="tool_panel_header">
+            <div>
+              <p class="tool_panel_label" id="toolPanelLabel">what career is right for me</p>
+              <h2 id="toolPanelTitle">Career Path Quiz</h2>
+              <p id="toolPanelDescription">Answer five quick questions to get role-fit suggestions.</p>
+            </div>
+            <div class="tool_panel_status" id="toolPanelStatus">Ready</div>
+          </div>
+
+          <form id="toolForm" class="tool_form" novalidate>
+            <div id="toolFields" class="tool_fields"></div>
+            <div class="tool_form_actions">
+              <button type="submit" class="saas_btn"><div class="btn_text"><span>Run Tool</span><span>Run Tool</span></div></button>
+              <p class="tool_form_note">Results are generated through the configured API endpoint. If the AI provider is unavailable or over quota, the page will show the live error message here.</p>
+            </div>
+          </form>
+
+          <div class="tool_results" id="toolResults" aria-live="polite">
+            <div class="tool_empty_state"><h3>Run the tool to see your result</h3><p>Your output appears here with a conversion CTA below it.</p></div>
+          </div>
+
+          <div class="tool_result_cta"><p>Want your full resume done in 60 seconds?</p><a href="https://app.cvlift.me/auth">Get started free</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer_area_two footer_area_three footer_shap" data-bg-color="#0F172A">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-6"><div class="f_widget f_about_widget"><a href="../../index.html" class="f_logo"><img src="../../imgs/f_logo_w.png" alt="CVLift Logo"/></a><p>AI-powered resume and cover letter generator helping job seekers land stronger applications faster.</p></div></div>
+          <div class="col-lg-4 col-sm-6"><div class="f_widget f_link_widget"><h3 class="f_title">PRODUCT</h3><ul class="list-unstyled link_widget"><li><a href="../../index.html#features">Features</a></li><li><a href="../../index.html#pricing">Pricing</a></li><li><a href="../index.html">Free Tools</a></li><li><a href="../../help.html">Help</a></li></ul></div></div>
+          <div class="col-lg-4 col-sm-6"><div class="f_widget f_link_widget"><h3 class="f_title">LEGAL</h3><ul class="list-unstyled link_widget"><li><a href="../../policy.html#terms">Terms & Conditions</a></li><li><a href="../../policy.html#privacy">Privacy Policy</a></li><li><a href="../../policy.html#cancellation">Cancellation & Refunds</a></li></ul></div></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="tools_modal" id="usageModal" hidden>
+    <div class="tools_modal_backdrop" data-close-modal="true"></div>
+    <div class="tools_modal_dialog" role="dialog" aria-modal="true" aria-labelledby="usageModalTitle">
+      <button class="tools_modal_close" type="button" data-close-modal="true" aria-label="Close">x</button>
+      <p class="tools_modal_tag">Free limit reached</p>
+      <h3 id="usageModalTitle">You've used 3 free checks today</h3>
+      <p>Sign up for CVLift to keep going with unlimited tools and build your full AI resume in 60 seconds.</p>
+      <div class="tools_modal_actions">
+        <a href="https://app.cvlift.me/auth" class="saas_btn"><div class="btn_text"><span>Get Started Free</span><span>Get Started Free</span></div></a>
+        <button type="button" class="tools_modal_later" data-close-modal="true">Maybe later</button>
+      </div>
+    </div>
+  </div>
+
+  <script>window.CVLIFT_INITIAL_TOOL = 'career-quiz';</script>
+  <script src="../../js/jquery-3.6.0.min.js"></script>
+  <script src="../../js/popper.min.js"></script>
+  <script src="../../js/bootstrap.min.js"></script>
+  <script src="../../js/wow.min.js"></script>
+  <script src="../../js/custom.js"></script>
+  <script src="../../js/tools.js"></script>
 </body>
 </html>
